@@ -1,0 +1,181 @@
+<div class="trn-summary-wrapper">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-12">
+      <button class="btn btn-dashboard" [routerLink]="['/gepg/payment']">
+        <i class="fa fa-file-text" aria-hidden="true"></i>
+        Bill Payment
+      </button>
+      <button class="btn btn-dashboard" [routerLink]="['/gepg/payment-history']">
+        <i class="fa fa-file-archive-o" aria-hidden="true"></i>
+        Payment History
+      </button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-12" style="text-align: right">
+      <span class="period-text"> <i class="fa fa-calendar-o" aria-hidden="true"></i> Period : </span>
+      <div class="btn-group">
+        <button
+          class="btn btn-period"
+        >
+          Today
+        </button>
+        <button
+          class="btn btn-period"
+        >
+          Last 7 Days
+        </button>
+        <button
+          class="btn btn-period"
+        >
+        Last 30 Days
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--spring flow-->
+
+<div style="margin: 10px;" >
+  <div class="card" style="width: 100%;">
+    <!--<div class="card-header">
+      <h5 style="margin: 0;">
+        <mat-icon style="color: black;">dashboard</mat-icon>
+        &nbsp;
+        <span>Requestor Dashboard</span>
+      </h5>
+    </div>-->
+  </div>
+  <br>
+  <div class="row">
+    <div class="col col-lg-3 col-md-4">
+      <div class="dashboard-card dashbord-warning" [routerLink]="['/workflow/br-request-queue']">
+        <div class="card-wrapper">
+          <div class="icon-section">
+            <span class="icon">
+              <mat-icon>assignment</mat-icon>
+            </span>
+          </div>
+          <div class="content-section">
+            <div class="content-body">Pending Approval</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-lg-3 col-md-4">
+      <div class="dashboard-card dashbord-info" [routerLink]="['/workflow/br-request-queue']">
+        <div class="card-wrapper">
+          <div class="icon-section">
+            <span class="icon">
+              <mat-icon>edit</mat-icon>
+            </span>
+          </div>
+          <div class="content-section">
+            <div class="content-body">Modification Required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-lg-3 col-md-4">
+      <div class="dashboard-card dashbord-success" [routerLink]="['/workflow/br-request-queue']">
+        <div class="card-wrapper">
+          <div class="icon-section">
+            <span class="icon">
+              <mat-icon>check_box</mat-icon>
+            </span>
+          </div>
+          <div class="content-section">
+            <div class="content-body">Approved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-lg-3 col-md-4">
+      <div class="dashboard-card dashbord-danger" [routerLink]="['/workflow/br-request-queue']">
+        <div class="card-wrapper">
+          <div class="icon-section">
+            <span class="icon">
+              <mat-icon>error</mat-icon>
+            </span>
+          </div>
+          <div class="content-section">
+            <div class="content-body">Rejected</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col col-lg-4 col-md-4 col-sm-4">
+      <button type="button" class="dashboard-button" mat-raised-button color="new" id="btnNewAccount"
+       >
+        <mat-icon>note_add</mat-icon>&nbsp;
+        <span>New Account</span>
+      </button>
+    </div>
+    <div class="col col-lg-4 col-md-4 col-sm-4">
+      <button type="button" class="dashboard-button" mat-raised-button color="new" id="btnViewDrafts"
+         style="width: 100%; border-radius: 50px;">
+        <mat-icon>receipt</mat-icon>&nbsp;
+        <span>View Drafts</span>
+      </button>
+    </div>
+    <div class="col col-lg-4 col-md-4 col-sm-4">
+      <button type="button" class="dashboard-button" mat-raised-button color="new" id="btnAllApplications"
+         style="width: 100%; border-radius: 50px;">
+        <mat-icon>view_list</mat-icon>&nbsp;
+        <span>All Applications</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- User alerts -->
+  <div class="alert-container">
+    <div class="alert-header">
+        <span>User Alerts</span>
+    </div>
+    <div class="table-responsive">
+        <table class="table alert-table">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 200px">Application Number</th>
+                    <th scope="col" style="width: 250px">Date</th>
+                    <th scope="col">From</th>
+                    <th scope="col" style="width: 200px;">Status</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <th scope="row">
+                    </th>
+                    <td>
+                        <!--<mat-icon  style="color: green;">check_circle</mat-icon>-->
+                       <!-- <mat-icon  >receipt</mat-icon>-->
+                        &nbsp;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+<!--Side bar-->
+<div class="container-fluid">
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <span class="menu-list" *ngFor="let control of menu">
+        <span class="menu-icon">
+          <mat-icon class="icon">{{control.icon}}</mat-icon>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>

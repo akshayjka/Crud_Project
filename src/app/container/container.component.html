@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <app-header></app-header>
+    <div class="row">
+        <div class="col-2" style="height: 700px;">
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="col-10">
+            <app-user *ngIf="hide1"></app-user>
+            <app-user-management *ngIf="hide2"></app-user-management>  
+            <div *ngFor="let user of users; let i=index ">{{i+1}}.{{user.name}}</div>
+            
+        </div>
+    </div>
+    </div>

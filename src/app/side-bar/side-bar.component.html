@@ -1,0 +1,62 @@
+<!--<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">Sidenav</mat-sidenav>
+    <mat-sidenav-content>Main
+        <button mat-raised-button (click)="opened=!opened">opened</button>  <br>
+        <button mat-raised-button (click)="sidenav.open()">Open</button> <br>
+        <button mat-raised-button (click)="sidenav.close()">Close</button> 
+        <button mat-raised-button (click)="sidenav.toggle()">Toogle</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>-->
+
+<mat-sidenav-container>
+    <!--<mat-sidenav  opened mode="side">
+        <ul>
+            <li><button mat-button (click)="data1(menu1)" [ngClass]="{'one':toggle}"><mat-icon >account_circle</mat-icon>
+                <mat-icon *ngIf="icon1">keyboard_arrow_right</mat-icon>
+                <mat-icon *ngIf="icon2">keyboard_arrow_down</mat-icon>Dashboard</button>
+            <ul *ngIf="hide">
+                <li><button mat-button><mat-icon>lock</mat-icon>user</button></li>
+                <li><button mat-button><mat-icon>lock</mat-icon>role</button></li>
+            </ul>
+            </li>
+           
+            <li><button mat-button (click)="data2(menu2)" [ngClass]="{'one':toggle2}"><mat-icon>account_circle</mat-icon>User Management</button></li>
+        </ul>
+    </mat-sidenav>-->
+
+    <mat-sidenav opened mode="side">
+        <div class="sidebar">
+        <ul class="components">
+            <li class="menu-list" *ngFor="let item of menu">
+                <span>
+                    <div class="menu-item" (click)="activatemenu(item)" [ngClass]="item.name == activemainmenu ? 'active-menu': '' ">
+                        <span>
+                            <mat-icon>{{item.icon}}</mat-icon>
+                            <span *ngIf="item.children.length>0">
+                                <mat-icon *ngIf="item.name != subname">keyboard_arrow_right</mat-icon>
+                                <mat-icon *ngIf="item.name == subname ">keyboard_arrow_down</mat-icon>
+                            </span>
+                            <span>{{item.name}}</span>
+                        </span>
+                    </div>
+                </span>
+                <div *ngIf="item.name== selectedmenu">
+                    <div *ngFor="let submenu of item.children">
+                        <div (click)="activatesubmenu(submenu)">
+                            <span class="menu-text">
+                                <span class="menu-icon">
+                                    <mat-icon>{{submenu.icon}}</mat-icon>
+                                </span>
+                                {{submenu.name}}
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+        </div>
+    </mat-sidenav>
+
+</mat-sidenav-container>
